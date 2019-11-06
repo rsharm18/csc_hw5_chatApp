@@ -4,12 +4,18 @@
       <a class="navbar-brand" href="https://ng-book.com/2">
         <img src="assets/images/logos/ng-book-2-minibook.png"/>
          ng-book 2
-      </a>
+      </a> 
+      <div>Welcome {{ authSer.name}} </div>
     </div>
     <p class="navbar-text navbar-right">
       <button class="btn btn-primary" type="button">
         Messages <span class="badge">{{ unreadMessagesCount }}</span>
       </button>
+
+      <button class="btn btn-primary" type="button" (click)="logout()">
+          Logout
+        </button>
+
     </p>
   </div>
 </nav>
