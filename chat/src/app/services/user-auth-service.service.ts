@@ -39,20 +39,6 @@ export class UserAuthServiceService {
       
     });
 
-    // this.aFireStore.collection('users',ref=>ref.where('user_id','==',userName)
-    // .where('password','==',pwd) ).get().toPromise().then(function(querySnapshot) {
-    //   console.log(` querySnapshot ${querySnapshot}`)
-
-    //   console.log(` querySnapshot.metadata ${querySnapshot.metadata}`);
-
-    //   querySnapshot.forEach(function(doc) {
-    //     //chandlergegg@gmail.com
-    //     console.log(` doc ${doc}`)
-    //     console.log(doc.id, ' => ', doc.data());
-    //   });
-    // });
-
-   console.log(`name ${this.name}`)
     
   return !this.validUser;
   }

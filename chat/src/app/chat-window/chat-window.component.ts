@@ -26,10 +26,14 @@ export class ChatWindowComponent implements OnInit {
   draftMessage: Message;
   currentUser: User;
 
+  showHide:String
+  hideChatWindow:boolean
+
   constructor(public messagesService: MessagesService,
               public threadsService: ThreadsService,
               public UsersService: UsersService,
               public el: ElementRef) {
+                
   }
 
   ngOnInit(): void {
@@ -55,6 +59,9 @@ export class ChatWindowComponent implements OnInit {
             this.scrollToBottom();
           });
         });
+
+        this.showHide="assets/images/logos/maximize.png";
+        this.hideChatWindow=true;
   }
 
   onEnter(event: any): void {
@@ -75,5 +82,21 @@ export class ChatWindowComponent implements OnInit {
     const scrollPane: any = this.el
       .nativeElement.querySelector('.msg-container-base');
     scrollPane.scrollTop = scrollPane.scrollHeight;
+  }
+
+  showHideChatWindow()
+  {
+
+    this.hideChatWindow=!this.hideChatWindow
+    if(this.hideChatWindow)
+    {
+
+      this.showHide="assets/images/logos/maximize.png";
+     }
+    else
+    {
+      this.showHide="assets/images/logos/minimize.png";
+    }
+
   }
 }

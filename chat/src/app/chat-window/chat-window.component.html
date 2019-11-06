@@ -1,4 +1,4 @@
-<div class="chat-window-container">
+<div class="chat-window-container" id="chatWindowBox">
   <div class="chat-window">
     <div class="panel-container">
       <div class="panel panel-default">
@@ -12,17 +12,19 @@
           </div>
           <div class="panel-buttons-container">
             <!-- you could put minimize or close buttons here -->
+            <!-- <button (click)="showHideChatWindow()" type="button">{{showHide}}</button> -->
+            <img src="{{showHide}}" (click)="showHideChatWindow()" style="width:20%;height: 20%;"/>
           </div>
         </div>
 
-        <div class="panel-body msg-container-base">
+        <div class="panel-body msg-container-base" *ngIf="!hideChatWindow">
           <chat-message
           *ngFor="let message of messages | async"
           [message]="message">
         </chat-message>
       </div>
 
-      <div class="panel-footer">
+      <div class="panel-footer" *ngIf="!hideChatWindow">
         <div class="input-group">
           <input type="text"
           class="chat-input"
