@@ -13,6 +13,7 @@ import { Thread } from '../thread/thread.model';
 import { ThreadsService } from '../thread/threads.service';
 import { Message } from '../message/message.model';
 import { MessagesService } from '../message/messages.service';
+import { UserAuthServiceService } from '../services/user-auth-service.service';
 
 @Component({
   selector: 'chat-window',
@@ -32,7 +33,8 @@ export class ChatWindowComponent implements OnInit {
   constructor(public messagesService: MessagesService,
               public threadsService: ThreadsService,
               public UsersService: UsersService,
-              public el: ElementRef) {
+              public el: ElementRef,
+              private userAuthServ:UserAuthServiceService) {
                 
   }
 
@@ -74,6 +76,7 @@ export class ChatWindowComponent implements OnInit {
     m.author = this.currentUser;
     m.thread = this.currentThread;
     m.isRead = true;
+    m.sender = this.userAuthServ.name;
     this.messagesService.addMessage(m);
     this.draftMessage = new Message();
   }

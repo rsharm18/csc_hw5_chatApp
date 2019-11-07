@@ -12,6 +12,7 @@ import { uuid } from './../util/uuid';
    author: User;
    text: string;
    thread: Thread;
+   sender:String;
 
    constructor(obj?: any) {
      this.id              = obj && obj.id              || uuid();
@@ -20,5 +21,6 @@ import { uuid } from './../util/uuid';
      this.author          = obj && obj.author          || null;
      this.text            = obj && obj.text            || null;
      this.thread          = obj && obj.thread          || null;
+     this.sender          = obj && obj.sender          || "";
    }
  }

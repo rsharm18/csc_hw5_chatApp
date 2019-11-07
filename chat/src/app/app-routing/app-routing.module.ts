@@ -14,6 +14,10 @@ const appRoutes: Routes = [
   { path: '',
     redirectTo: '/chatPage',
     pathMatch: 'full'
+  },
+  { path: '*',
+    redirectTo: '/chatPage',
+    pathMatch: 'full'
   }
 ];
 
