@@ -22,7 +22,7 @@ export class ChatNavBarComponent implements OnInit {
 
   constructor(public messagesService: MessagesService,
               public threadsService: ThreadsService,
-              private authSer:UserAuthServiceService) {
+              public  authSer:UserAuthServiceService) {
   }
 
   ngOnInit(): void {
